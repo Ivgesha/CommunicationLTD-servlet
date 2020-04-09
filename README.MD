@@ -1,6 +1,6 @@
 # How to set up the project
 
-*Note: follow this steps only if you choose to use the vagrant development box: https://github.com/nati-elmaliach/vagrant-java-development-server
+*Note: follow this steps only if you choose to use the vagrant development box: https://github.com/nati-elmaliach/vagrant-java-development-server, if not the states may differ. 
 
 After running `vagrant up` you have 2 folder in Desktop: 
 - Tomcat
