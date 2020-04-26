@@ -11,7 +11,7 @@ import java.sql.DriverManager;
 // added 2 files in webContent -> WEB-INF -> lib -> mysql-connector-java-8.0.11.jar + protobuf-java-2.6.0.jar
 // pay attention to the name of the localhost of the mySQL ( could be localhost:3306 or 127.0.0.1:3306 ) -> add it to the URL
 // add to the URD -> ?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC\r\n (after the DataBase) 
-
+// test 
 
 
 
