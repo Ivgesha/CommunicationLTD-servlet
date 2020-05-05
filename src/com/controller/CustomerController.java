@@ -22,6 +22,8 @@ public class CustomerController extends HttpServlet {
 		customerDAO = new CustomerDAOImpl();
 	}
 
+	
+	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 
