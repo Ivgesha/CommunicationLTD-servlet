@@ -7,5 +7,7 @@ public interface CustomerDAO {
 	
 	List<Customer> get();
 	
+	boolean authenticate(String username,String password);
+	
 	boolean saveCustomer(Customer c);
 }

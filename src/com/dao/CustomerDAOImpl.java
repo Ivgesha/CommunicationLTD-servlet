@@ -78,5 +78,31 @@ public class CustomerDAOImpl implements CustomerDAO {
 		return flag;
 
 	}
-
+	
+	@Override
+	public boolean authenticate(String username,String password) {
+		boolean isUser = false;
+        try {
+        	System.out.println("username -> " + username + " and password -> " + password + "\n");
+            Connection con = DBConnectionUtil.openConnection();
+            PreparedStatement statement = con.prepareStatement("select username,password from tbl_operators where username=? and password=?");
+            statement.setString(1, username);
+            statement.setString(2, password);
+            ResultSet result = statement.executeQuery();
+            if (result.next()) {
+                isUser = true;
+                System.out.println("User authenticated successfully");
+            } else {
+            	
+                System.out.println("Invalid username or password!");
+            }
+        } catch (Exception e) {
+            System.out.println("DB related Error");
+            e.printStackTrace();
+        }
+        return isUser;
+    }
+		
+		
 }
+	

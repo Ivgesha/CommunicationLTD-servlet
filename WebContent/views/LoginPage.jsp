@@ -8,10 +8,11 @@
 </head>
 <body>
 
-<form action="Login">
+<form action="${pageContext.request.contextPath}/LogIn" method="POST">
 Enter user name: <input type="text" name="uname"><br>
 Enter password: <input type="password" name="pass"><br>
-<input type="submit" value="Login"> 
+<input type="submit" name = "LoginButten" value="LoginBtn"> <br>
+<inpute type = "text" name = "ans">
 
 </form>
 

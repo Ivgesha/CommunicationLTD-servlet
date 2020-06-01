@@ -22,4 +22,37 @@
 		<servlet-name>CustomerController</servlet-name>
 		<url-pattern>/CustomerController</url-pattern>
 	</servlet-mapping>
+	
+	<servlet>
+	<servlet-name>Welcome</servlet-name>
+	<servlet-class>WelcomeClass</servlet-class>
+	</servlet>
+	<servlet-mapping>
+	<servlet-name>Welcome</servlet-name>
+	<url-pattern>/Welcome</url-pattern>
+	</servlet-mapping>
+	
+	
+	<servlet>
+	<servlet-name>Register</servlet-name>
+	<servlet-class>RegisterClass</servlet-class>
+	</servlet>
+	<servlet-mapping>
+	<servlet-name>Register</servlet-name>
+	<url-pattern>/Register</url-pattern>
+	</servlet-mapping>
+	
+	
+	
+	
+	<servlet>
+	<servlet-name> LogIn </servlet-name>
+	<servlet-class>LogInClass</servlet-class>
+	</servlet>
+	<servlet-mapping>
+	<servlet-name> LogIn </servlet-name>
+	<url-pattern>/LogIn</url-pattern>
+	</servlet-mapping>
+	
+	
 </web-app>

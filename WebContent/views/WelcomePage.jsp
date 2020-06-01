@@ -12,11 +12,13 @@
 </head>
 <body>
 
-<form action="WelcomePage">
+<form action="${pageContext.request.contextPath}/Welcome" method="POST">
 
-Login 			<input type="submit" value="Login"><br> 
-Register		<input type="submit" value="Register"><br>
-password 		<input type="submit" value="Forgot password"><br>
+		<input type="submit" value="LogIn" name ="btnLogin"><br> 
+		<input type="submit" value="Register" name = "btnRegister"><br>
+		<input type="submit" value="Change password" name = "btnChangePassword"><br>
+		<input type="submit" value="Forgot password" name = "btnForgotPassWord"><br>
+</form>
 
 </body>
 </html>
