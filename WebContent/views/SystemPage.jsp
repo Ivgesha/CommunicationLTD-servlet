@@ -9,8 +9,8 @@
 <body>
 
 
-<form action="MainPage">
-<input type="submit" value="Add new costumer"><br>
+<form action="${pageContext.request.contextPath}/SystemC" method="POST">
+<input type="submit" value="Add new costumer" name = "btnNewCustomer"><br>
 <input type="submit" value="Show last added costumer"><br>
 
 

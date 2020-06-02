@@ -9,14 +9,14 @@
 <body>
 
 
-<form action="AddNewCostumerPage">
+<form action="${pageContext.request.contextPath}/AddNewCostumer" method="POST">
 Enter name: <input type="text" name="uname"><br>
 Enter family name: <input type="text" name="uname"><br>
 Enter id number: <input type="number" name="id"><br>
 Enter email: <input type="email" name="email"><br>
 Enter Internet package: <input type="text" name="ipack"><br>
 Enter sector: <input type="text" name="isack"><br>
-<input type="submit" value="submit">
+<input type="submit" value="submit" name = "btnSubmit">
 
 
 

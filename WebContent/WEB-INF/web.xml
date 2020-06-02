@@ -5,13 +5,15 @@
 	id="WebApp_ID" version="2.5">
 	<display-name>CommunicationLTD</display-name>
 	<welcome-file-list>
-		<welcome-file>index.html</welcome-file>
+	<welcome-file>index.html</welcome-file>
 		<welcome-file>index.htm</welcome-file>
 		<welcome-file>index.jsp</welcome-file>
 		<welcome-file>default.html</welcome-file>
 		<welcome-file>default.htm</welcome-file>
 		<welcome-file>default.jsp</welcome-file>
 	</welcome-file-list>
+	
+
 	<servlet>
 		<description></description>
 		<display-name>CustomerController</display-name>
@@ -23,7 +25,7 @@
 		<url-pattern>/CustomerController</url-pattern>
 	</servlet-mapping>
 	
-	<servlet>
+		<servlet>
 	<servlet-name>Welcome</servlet-name>
 	<servlet-class>WelcomeClass</servlet-class>
 	</servlet>
@@ -31,6 +33,7 @@
 	<servlet-name>Welcome</servlet-name>
 	<url-pattern>/Welcome</url-pattern>
 	</servlet-mapping>
+	
 	
 	
 	<servlet>
@@ -43,6 +46,23 @@
 	</servlet-mapping>
 	
 	
+	<servlet>
+	<servlet-name>ChangePassword</servlet-name>
+	<servlet-class>ChangePasswordClass</servlet-class>
+	</servlet>
+	<servlet-mapping>
+	<servlet-name>ChangePassword</servlet-name>
+	<url-pattern>/ChangePassword</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+	<servlet-name>ForgotPassword</servlet-name>
+	<servlet-class>ForgotPasswordClass</servlet-class>
+	</servlet>
+	<servlet-mapping>
+	<servlet-name>ForgotPassword</servlet-name>
+	<url-pattern>/ForgotPassword</url-pattern>
+	</servlet-mapping>
 	
 	
 	<servlet>
@@ -53,6 +73,25 @@
 	<servlet-name> LogIn </servlet-name>
 	<url-pattern>/LogIn</url-pattern>
 	</servlet-mapping>
+	
+	<servlet>
+	<servlet-name> AddNewCostumer </servlet-name>
+	<servlet-class>AddNewCostumerClass</servlet-class>
+	</servlet>
+	<servlet-mapping>
+	<servlet-name> AddNewCostumer</servlet-name>
+	<url-pattern>/AddNewCostumer</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+	<servlet-name> SystemC </servlet-name>
+	<servlet-class>SystemClass</servlet-class>
+	</servlet>
+	<servlet-mapping>
+	<servlet-name> SystemC </servlet-name>
+	<url-pattern>/SystemC</url-pattern>
+	</servlet-mapping>
+	
 	
 	
 </web-app>

@@ -8,11 +8,11 @@
 </head>
 <body>
 
-<form action="ChangePasswordPage">
+<form action="${pageContext.request.contextPath}/ChangePassword" method="POST">
 Current password: <input type="text" name="text"><br>
 Enter new password: <input type="text" name="text"><br>
 Confirm new password: <input type="text" name="text"><br>
-<input type="submit" value="submit"><br>
+<input type="submit" value="submit" name = "btnSubmit"><br>
 
 
 </form>
