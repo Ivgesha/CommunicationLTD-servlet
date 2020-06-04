@@ -13,14 +13,37 @@
 </head>
 <body>
 
+
+	<%
+		String username = (String) session.getAttribute("username");
+
+		if (username == null)
+			response.sendRedirect("index.jsp");
+	%>
 	<div class="container">
+		<div class="float-right">
+			<a href="${pageContext.request.contextPath}/logout.jsp">Logout</a>
+		</div>
+		<div class="float-right">
+			<form
+				action="${pageContext.request.contextPath}/OperatorRegisterController?action=EDIT'"
+				method="get">
+				<button type="submit">Discard password</button>
+			</form>
+		</div>
+
+
 		<button class="btn btn-primary"
-			onclick="window.location.href='views/Customer-register.jsp'">Register</button>
+			onClick="window.location.href='views/Customer-register.jsp'">Add
+			Customer</button>
+
+
 		<table class="table table-bordered">
 			<tr class="thead-dark">
 				<th>ID</th>
 				<th>USERNAME</th>
 				<th>EMAIL</th>
+				<th>Actions</th>
 			</tr>
 			<c:forEach items="${customers}" var="customer">
 				<tr>

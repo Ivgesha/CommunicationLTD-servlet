@@ -22,8 +22,6 @@ public class CustomerController extends HttpServlet {
 		customerDAO = new CustomerDAOImpl();
 	}
 
-	
-	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 
@@ -33,11 +31,10 @@ public class CustomerController extends HttpServlet {
 
 		switch (action) {
 		case "LIST":
-			listCustomrs(request, response);
+			handleListCustomrs(request, response);
 			break;
-
 		default:
-			listCustomrs(request, response);
+			handleListCustomrs(request, response);
 			break;
 		}
 	}
@@ -58,11 +55,11 @@ public class CustomerController extends HttpServlet {
 			request.setAttribute("message", "Saved Successfully");
 		}
 
-		listCustomrs(request, response);
+		handleListCustomrs(request, response);
 
 	}
 
-	public void listCustomrs(HttpServletRequest request, HttpServletResponse response)
+	public void handleListCustomrs(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		// call dao to get list of customers
 		List<Customer> customers = customerDAO.get();

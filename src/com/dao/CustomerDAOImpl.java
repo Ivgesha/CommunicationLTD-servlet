@@ -79,6 +79,9 @@ public class CustomerDAOImpl implements CustomerDAO {
 
 	}
 	
+	
+	
+	// TODO generalize the authenticate method for 
 	@Override
 	public boolean authenticate(String username,String password) {
 		boolean isUser = false;

@@ -12,7 +12,7 @@
 </head>
 <body
 	class="d-flex flex-column justify-content-between align-items-center">
-	<h1>Register</h1>
+	<h1>Add New Customer</h1>
 	<div class="container d-flex justify-content-center">
 		<form action="${pageContext.request.contextPath}/CustomerController"
 			method="POST">

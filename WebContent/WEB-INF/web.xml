@@ -5,27 +5,13 @@
 	id="WebApp_ID" version="2.5">
 	<display-name>CommunicationLTD</display-name>
 	<welcome-file-list>
-	<welcome-file>index.html</welcome-file>
+		<welcome-file>index.html</welcome-file>
 		<welcome-file>index.htm</welcome-file>
 		<welcome-file>index.jsp</welcome-file>
 		<welcome-file>default.html</welcome-file>
 		<welcome-file>default.htm</welcome-file>
 		<welcome-file>default.jsp</welcome-file>
 	</welcome-file-list>
-	<security-constraint>
-	<web-resource-collection>
-	<web-resource-name>	CommunicationLTD</web-resource-name>
-	<url-pattern>/*</url-pattern>
-	
-	</web-resource-collection>
-	<user-data-constraint>
-	<transport-guarantee>CONFIDENTIAL</transport-guarantee>
-	</user-data-constraint>
-	
-	</security-constraint>
-	
-	
-
 	<servlet>
 		<description></description>
 		<display-name>CustomerController</display-name>
@@ -36,74 +22,96 @@
 		<servlet-name>CustomerController</servlet-name>
 		<url-pattern>/CustomerController</url-pattern>
 	</servlet-mapping>
-	
-		<servlet>
-	<servlet-name>Welcome</servlet-name>
-	<servlet-class>WelcomeClass</servlet-class>
-	</servlet>
-	<servlet-mapping>
-	<servlet-name>Welcome</servlet-name>
-	<url-pattern>/Welcome</url-pattern>
-	</servlet-mapping>
-	
-	
-	
+
 	<servlet>
-	<servlet-name>Register</servlet-name>
-	<servlet-class>RegisterClass</servlet-class>
+		<description></description>
+		<display-name>LoginController</display-name>
+		<servlet-name>LoginController</servlet-name>
+		<servlet-class>com.controller.LoginController</servlet-class>
 	</servlet>
 	<servlet-mapping>
-	<servlet-name>Register</servlet-name>
-	<url-pattern>/Register</url-pattern>
+		<servlet-name>LoginController</servlet-name>
+		<url-pattern>/LoginController</url-pattern>
 	</servlet-mapping>
-	
-	
+
 	<servlet>
-	<servlet-name>ChangePassword</servlet-name>
-	<servlet-class>ChangePasswordClass</servlet-class>
+		<description></description>
+		<display-name>OperatorRegisterController</display-name>
+		<servlet-name>OperatorRegisterController</servlet-name>
+		<servlet-class>com.controller.OperatorRegisterController</servlet-class>
 	</servlet>
 	<servlet-mapping>
-	<servlet-name>ChangePassword</servlet-name>
-	<url-pattern>/ChangePassword</url-pattern>
+		<servlet-name>OperatorRegisterController</servlet-name>
+		<url-pattern>/OperatorRegisterController</url-pattern>
 	</servlet-mapping>
-	
+
 	<servlet>
-	<servlet-name>ForgotPassword</servlet-name>
-	<servlet-class>ForgotPasswordClass</servlet-class>
+		<servlet-name>Welcome</servlet-name>
+		<servlet-class>WelcomeClass</servlet-class>
 	</servlet>
 	<servlet-mapping>
-	<servlet-name>ForgotPassword</servlet-name>
-	<url-pattern>/ForgotPassword</url-pattern>
+		<servlet-name>Welcome</servlet-name>
+		<url-pattern>/Welcome</url-pattern>
 	</servlet-mapping>
-	
-	
+
+
+
 	<servlet>
-	<servlet-name> LogIn </servlet-name>
-	<servlet-class>LogInClass</servlet-class>
+		<servlet-name>Register</servlet-name>
+		<servlet-class>RegisterClass</servlet-class>
 	</servlet>
 	<servlet-mapping>
-	<servlet-name> LogIn </servlet-name>
-	<url-pattern>/LogIn</url-pattern>
+		<servlet-name>Register</servlet-name>
+		<url-pattern>/Register</url-pattern>
 	</servlet-mapping>
-	
+
+
 	<servlet>
-	<servlet-name> AddNewCostumer </servlet-name>
-	<servlet-class>AddNewCostumerClass</servlet-class>
+		<servlet-name>ChangePassword</servlet-name>
+		<servlet-class>ChangePasswordClass</servlet-class>
 	</servlet>
 	<servlet-mapping>
-	<servlet-name> AddNewCostumer</servlet-name>
-	<url-pattern>/AddNewCostumer</url-pattern>
+		<servlet-name>ChangePassword</servlet-name>
+		<url-pattern>/ChangePassword</url-pattern>
 	</servlet-mapping>
-	
+
 	<servlet>
-	<servlet-name> SystemC </servlet-name>
-	<servlet-class>SystemClass</servlet-class>
+		<servlet-name>ForgotPassword</servlet-name>
+		<servlet-class>ForgotPasswordClass</servlet-class>
 	</servlet>
 	<servlet-mapping>
-	<servlet-name> SystemC </servlet-name>
-	<url-pattern>/SystemC</url-pattern>
+		<servlet-name>ForgotPassword</servlet-name>
+		<url-pattern>/ForgotPassword</url-pattern>
 	</servlet-mapping>
-	
-	
-	
+
+
+	<servlet>
+		<servlet-name>LogIn</servlet-name>
+		<servlet-class>LogInClass</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>LogIn</servlet-name>
+		<url-pattern>/LogIn</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>AddNewCostumer</servlet-name>
+		<servlet-class>AddNewCostumerClass</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>AddNewCostumer</servlet-name>
+		<url-pattern>/AddNewCostumer</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>SystemC</servlet-name>
+		<servlet-class>SystemClass</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>SystemC</servlet-name>
+		<url-pattern>/SystemC</url-pattern>
+	</servlet-mapping>
+
+
+
 </web-app>
