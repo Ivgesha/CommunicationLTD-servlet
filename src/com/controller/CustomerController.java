@@ -25,6 +25,7 @@ public class CustomerController extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 
+		
 		String action = request.getParameter("action");
 		if (action == null)
 			action = "LIST";

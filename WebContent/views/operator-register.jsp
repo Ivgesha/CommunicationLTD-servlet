@@ -24,6 +24,11 @@
 						id="exampleInputText">
 				</div>
 				<div class="form-group">
+					<label for="exampleInputEmail">Email</label> <input
+						name="email" type="email" class="form-control"
+						id="exampleInputEmail">
+				</div>
+				<div class="form-group">
 					<label for="exampleInputPassword1">Password</label> <input
 						name="password" type="password" class="form-control"
 						id="exampleInputPassword1">
