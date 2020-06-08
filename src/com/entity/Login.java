@@ -5,6 +5,8 @@ public class Login {
 	private int id;
 	private String username;
 	private String password;
+	private String salt; 
+	private String email;
 	public int getId() {
 		return id;
 	}
@@ -23,6 +25,18 @@ public class Login {
 	public void setPassword(String password) {
 		this.password = password;
 	}
-
+	
+	public void setEmail(String email) {
+		this.email = email;
+	}
+	public String getEmail() {
+		return email;
+	}
+	public void setSalt(String salt) {
+		this.salt = salt;
+	}
+	public String getSalt() {
+		return salt;
+	}
 
 }

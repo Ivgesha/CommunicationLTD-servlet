@@ -25,6 +25,7 @@ public class CustomerController extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 
+		
 		String action = request.getParameter("action");
 		if (action == null)
 			action = "LIST";
@@ -39,16 +40,22 @@ public class CustomerController extends HttpServlet {
 		}
 	}
 
+	
+	// pressing submit in the addCustomer page 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		String email = request.getParameter("email");
-		String username = request.getParameter("username");
-		String password = request.getParameter("password");
+		String customerName = request.getParameter("customerName");
+		String internetPackage = request.getParameter("internetPackage");
+		String sector = request.getParameter("sector");
+		String customerID = request.getParameter("customerID");
 
 		Customer customer = new Customer();
 		customer.setEmail(email);
-		customer.setPassword(password);
-		customer.setUsername(username);
+		customer.setCustomerName(customerName);
+		customer.setInternetPackage(internetPackage);
+		customer.setSector(sector);
+		customer.setCustomerID(customerID);
 
 		// The insertion to database succeed
 		if (customerDAO.saveCustomer(customer)) {

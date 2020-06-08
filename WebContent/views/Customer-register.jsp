@@ -24,13 +24,25 @@
 					with anyone else.</small>
 			</div>
 			<div class="form-group">
-				<label for="exampleInputText">Username</label> <input name="username" type="text"
+				<label for="exampleInputText">Customer name</label> <input name="customerName" type="text"
 					class="form-control" id="exampleInputText">
 			</div>
 			<div class="form-group">
-				<label for="exampleInputPassword1">Password</label> <input name="password"
-					type="password" class="form-control" id="exampleInputPassword1">
+				<label for="exampleInputText1">Internet package</label> <input name="internetPackage"
+					type="text" class="form-control" id="exampleInputText1">
 			</div>
+
+			<div class="form-group">
+				<label for="exampleInputText2">Sector</label> <input name="sector"
+					type="text" class="form-control" id="exampleInputText2">
+			</div>
+			
+			
+			<div class="form-group">
+				<label for="exampleInputText3">Customer ID</label> <input name="customerID"
+					type="text" class="form-control" id="exampleInputText3">
+			</div>
+
 
 			<button type="submit" class="btn btn-primary">Submit</button>
 		</form>

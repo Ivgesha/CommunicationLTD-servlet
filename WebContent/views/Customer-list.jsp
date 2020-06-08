@@ -41,15 +41,21 @@
 		<table class="table table-bordered">
 			<tr class="thead-dark">
 				<th>ID</th>
-				<th>USERNAME</th>
+				<th>CUSTOMER NAME</th>
 				<th>EMAIL</th>
+				<th>INTERNET PACKAGE</th>
+				<th>SECTOR</th>
+				<th>customerID</th>
 				<th>Actions</th>
 			</tr>
 			<c:forEach items="${customers}" var="customer">
 				<tr>
 					<td>${customer.id}</td>
-					<td>${customer.username}</td>
+					<td>${customer.customerName}</td>
 					<td>${customer.email}</td>
+					<td>${customer.internetPackage}</td>
+					<td>${customer.sector}</td>
+					<td>${customer.customerID}</td>
 				</tr>
 
 			</c:forEach>

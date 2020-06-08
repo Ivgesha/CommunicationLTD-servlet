@@ -44,8 +44,11 @@ public class CustomerDAOImpl implements CustomerDAO {
 			while (resultSet.next()) {
 				customer = new Customer();
 				customer.setId(resultSet.getInt("id"));
-				customer.setUsername(resultSet.getString("username"));
+				customer.setCustomerName(resultSet.getString("customerName"));
 				customer.setEmail(resultSet.getString("email"));
+				customer.setInternetPackage(resultSet.getString("internetPackage"));
+				customer.setSector(resultSet.getString("sector"));
+				customer.setCustomerID(resultSet.getString("customerID"));
 
 				customers.add(customer);
 			}
@@ -60,17 +63,20 @@ public class CustomerDAOImpl implements CustomerDAO {
 	@Override
 	public boolean saveCustomer(Customer customer) {
 		boolean flag = false;
-
+//
 		try {
-			String sql = "INSERT INTO tbl_customers(username , password , email)" + "VALUES (?,?,?)";
+			String sql = "INSERT INTO tbl_customers(customerName, email , internetPackage, sector ,customerID)" + "VALUES (?,?,?,?,?)";
 			connection = DBConnectionUtil.openConnection();
 			preparedStatement = connection.prepareStatement(sql);
 
-			preparedStatement.setString(1, customer.getUsername());
-			preparedStatement.setString(2, customer.getPassword());
-			preparedStatement.setString(3, customer.getEmail());
-
+			preparedStatement.setString(1, customer.getCustomerName());
+			preparedStatement.setString(2, customer.getEmail());
+			preparedStatement.setString(3, customer.getInternetPackage());
+			preparedStatement.setString(4, customer.getSector());
+			preparedStatement.setString(5, customer.getCustomerID());
+			System.out.println("--------------------------------");
 			preparedStatement.executeUpdate();
+			System.out.println("succesfully submited");
 			flag = true;
 		} catch (SQLException e) {
 			e.printStackTrace();
@@ -78,8 +84,18 @@ public class CustomerDAOImpl implements CustomerDAO {
 		return flag;
 
 	}
+
+	
+	// moved to other class ( login dao ) 
+	@Override
+	public boolean authenticate(String username, String password) {
+		// TODO Auto-generated method stub
+		return false;
+	}
 	
 	
+	
+	/*
 	
 	// TODO generalize the authenticate method for 
 	@Override
@@ -105,6 +121,8 @@ public class CustomerDAOImpl implements CustomerDAO {
         }
         return isUser;
     }
+    
+    */
 		
 		
 }
