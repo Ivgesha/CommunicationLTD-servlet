@@ -17,7 +17,6 @@ import java.sql.DriverManager;
 
 
 public class DBConnectionUtil {
-
 	// Define the database properties
 	//private static final String URL = "jdbc:mysql://localhost:3306/communication";
 	private static final String URL = "jdbc:mysql://127.0.0.1:3306/communication?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC\r\n";

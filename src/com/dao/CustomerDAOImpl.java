@@ -74,9 +74,7 @@ public class CustomerDAOImpl implements CustomerDAO {
 			preparedStatement.setString(3, customer.getInternetPackage());
 			preparedStatement.setString(4, customer.getSector());
 			preparedStatement.setString(5, customer.getCustomerID());
-			System.out.println("--------------------------------");
 			preparedStatement.executeUpdate();
-			System.out.println("succesfully submited");
 			flag = true;
 		} catch (SQLException e) {
 			e.printStackTrace();
