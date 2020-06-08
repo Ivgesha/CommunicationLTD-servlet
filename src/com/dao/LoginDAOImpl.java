@@ -51,7 +51,7 @@ public class LoginDAOImpl implements LoginDao {
 			System.out.println("hashedPass = "  + hashedPass);
 			System.out.println("currentUser.getPassword() " + currentUser.getPassword());
 			
-				//
+		
 			 
 			if(hashedPass.equals(currentUser.getPassword())) {
 				return "true";
