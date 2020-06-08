@@ -28,7 +28,7 @@
 			<form
 				action="${pageContext.request.contextPath}/OperatorRegisterController?action=EDIT'"
 				method="get">
-				<button type="submit">Discard password</button>
+				<button class="btn btn-primary" type="submit">Discard password</button>
 			</form>
 		</div>
 
