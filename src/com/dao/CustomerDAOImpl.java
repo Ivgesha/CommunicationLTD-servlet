@@ -63,7 +63,7 @@ public class CustomerDAOImpl implements CustomerDAO {
 	@Override
 	public boolean saveCustomer(Customer customer) {
 		boolean flag = false;
-
+//
 		try {
 			String sql = "INSERT INTO tbl_customers(customerName, email , internetPackage, sector ,customerID)" + "VALUES (?,?,?,?,?)";
 			connection = DBConnectionUtil.openConnection();
