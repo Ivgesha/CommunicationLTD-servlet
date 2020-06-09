@@ -148,7 +148,7 @@ public class OperatorRegisterController extends HttpServlet {
 		String email = req.getParameter("email");
 		String message = req.getParameter("message");
 		
-		SendMail sendMail = new SendMail(email, "natielmaliach3197@gmail.com", message, "localhost:8443");
+		SendMail sendMail = new SendMail(email, " FROM: WHO SENDING THE MAIL", message, "localhost:8443");
 		sendMail.sendMailToClient();
 
 		// TODO set the operator password to null , send a new hashed value
