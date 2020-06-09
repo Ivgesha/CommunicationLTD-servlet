@@ -90,7 +90,7 @@ public class CustomerDAOImpl implements CustomerDAO {
 	@Override
 	public boolean authenticate(String username, String password) {
 		// TODO Auto-generated method stub
-		return false;
+		return true;
 	}
 	
 	

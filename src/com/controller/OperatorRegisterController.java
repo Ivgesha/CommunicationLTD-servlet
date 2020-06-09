@@ -12,6 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import com.model.PasswordHandler;
+import com.util.SendMail;
 import com.dao.LoginDAOImpl;
 import com.dao.LoginDao;
 import com.entity.Login;
@@ -41,9 +42,9 @@ public class OperatorRegisterController extends HttpServlet {
 
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		
+
 		HttpSession httpSession = req.getSession();
-		
+
 		int i = 0;
 		String username = req.getParameter("username");
 		String password = req.getParameter("password");
@@ -74,7 +75,8 @@ public class OperatorRegisterController extends HttpServlet {
 						generatedSalt = PasswordHandler.generateSalt();
 						saltString = PasswordHandler.toHexString(generatedSalt);
 						dataPassword = saltString + password;
-						// hashing the password and using the username as a key.
+						// hashing the password and using the username as a
+						// key.
 						hashedPass = PasswordHandler.HmacSHA1(dataPassword, username);
 						user = new Login();
 						user.setUsername(username);
@@ -91,11 +93,12 @@ public class OperatorRegisterController extends HttpServlet {
 						// TODO Auto-generated catch block
 						e.printStackTrace();
 					}
-				} else {// password missing on of the specialChar,upperChar,lowerChar,digitChar
+				} else {// password missing on of the
+						// specialChar,upperChar,lowerChar,digitChar
 					System.out.println(
 							"password missing one of the folowing: specialChar,upperChar,lowerChar, digitChar\n");
 					// need to add redirects
-					//resp.sendRedirect("/OperatorRegisterController");
+					// resp.sendRedirect("/OperatorRegisterController");
 
 				}
 
@@ -103,7 +106,7 @@ public class OperatorRegisterController extends HttpServlet {
 				// password to short
 				System.out.println("password to short");
 				// need to add redirects
-				//resp.sendRedirect("/OperatorRegisterController");
+				// resp.sendRedirect("/OperatorRegisterController");
 
 			}
 
@@ -112,30 +115,46 @@ public class OperatorRegisterController extends HttpServlet {
 			// the password and the validationPassword dont match
 			System.out.println("password and validationPassword dosent match");
 			// need to add redirects
-			//resp.sendRedirect("/OperatorRegisterController");
+			// resp.sendRedirect("/OperatorRegisterController");
 		}
 		// need to create salt,
 		// need to combind salt + password
 		// then need to use func toHexString to generate hmac.
 		// the save it to database.
 
-		// TODO hash + salt the password , save the operator in the tbl_operators
+		// TODO hash + salt the password , save the operator in the
+		// tbl_operators
 
 		// loginDao.insertUser(login);
 
 		// TODO after hashing the password , you will need to decrypt when
 		// validating users
-
 	}
 
 	@Override
-	protected void doGet(HttpServletRequest request, HttpServletResponse response)
-			throws ServletException, IOException {
-		String action = request.getParameter("action");
+	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		String action = req.getParameter("email");
+		if (action != null) {
+			handleSendEmail(req, resp);
+		}
 
-		if (action.equals("EDIT"))
-			handleFrogetOperatorPassword(request, response);
+		else if (action.equals("EDIT"))
+			handleFrogetOperatorPassword(req, resp);
 
+	}
+
+	public void handleSendEmail(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+
+		String email = req.getParameter("email");
+		String message = req.getParameter("message");
+		
+		SendMail sendMail = new SendMail(email, "natielmaliach3197@gmail.com", message, "localhost:8443");
+		sendMail.sendMailToClient();
+
+		// TODO set the operator password to null , send a new hashed value
+
+		// TODO add a new page to enter the value send by mail , and redirecting
+		// to change password page if values are matched
 	}
 
 	public void handleFrogetOperatorPassword(HttpServletRequest request, HttpServletResponse response)

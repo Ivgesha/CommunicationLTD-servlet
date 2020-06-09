@@ -15,7 +15,7 @@
 
 	<%
 		// get the http session
-		String httpSession = (String)session.getAttribute("username");
+		String httpSession = (String) session.getAttribute("username");
 
 		// if the user allready logged in redirect to customers list
 		if (httpSession != null) {
@@ -33,14 +33,37 @@
 		}
 	%>
 	<h1>Communication LTD</h1>
-	<div class="container">
+	<div class="container d-flex flex-column align-items-center ">
 		<div class="container d-flex justify-content-around">
 			<button type="button" class="btn btn-outline-primary"
 				onclick="window.location.href='views/LoginPage.jsp'">Login</button>
 			<button type="button" class="btn btn-outline-secondary"
 				onclick="window.location.href='views/operator-register.jsp'">Register</button>
 		</div>
+		<form
+			action="${pageContext.request.contextPath}/OperatorRegisterController?action=MAIL"
+			method="get">
+			<div class="form-group row">
+				<label class="col-sm-4 col-form-label">Email</label>
+				<div class="col-sm-10">
+					<input name="email" type="text" class="form-control"
+						id="mail">
+				</div>
+			</div>
+			<div class="form-group row">
+				<label class="col-sm-4 col-form-label">Message</label>
+				<div class="col-sm-10">
+					<input name="message" type="text" class="form-control"
+						id="message">
+				</div>
+			</div>
+			<button type="submit" class="btn btn-primary mb-2">Send
+				Email</button>
+		</form>
+
+
 	</div>
+
 
 </body>
 </html>
