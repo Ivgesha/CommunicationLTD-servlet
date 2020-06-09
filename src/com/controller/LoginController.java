@@ -1,6 +1,8 @@
 package com.controller;
 
 import java.io.IOException;
+import java.util.Timer;
+import java.util.TimerTask;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -14,8 +16,10 @@ import com.entity.Login;
 
 public class LoginController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-
+	boolean userBlocked = false;
+	int attempts = 0;
 	LoginDao loginDao = null;
+	String status;
 
 	public LoginController() {
 		loginDao = new LoginDAOImpl();
@@ -24,7 +28,6 @@ public class LoginController extends HttpServlet {
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
-		
 		// save the http session
 		HttpSession httpSession = req.getSession();
 
@@ -37,8 +40,31 @@ public class LoginController extends HttpServlet {
 		login.setUsername(username);
 		login.setPassword(password);
 
-		String status = loginDao.authenticate(login);
-		System.out.println(status);
+		if (userBlocked == false) {
+			if (attempts < 3) {
+				status = loginDao.authenticate(login);
+				System.out.println(status);
+				if (status.equals("true")) {
+					attempts = 0;
+
+				} else
+					attempts += 1;
+			} else {
+				userBlocked = true;
+				System.out.println("account blocked");
+				Timer timer = new Timer();
+				timer.schedule(new TimerTask() {
+					public void run() {
+						System.out.println("10 Seconds Later");
+						attempts = 0;
+						userBlocked = false;
+					}
+				}, 10000);
+
+			}
+		} else if (userBlocked == true) {
+			System.out.println("account blocked for 10 second");
+		}
 
 		// redirect based on the status
 		switch (status) {
@@ -63,7 +89,8 @@ public class LoginController extends HttpServlet {
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		super.doGet(req, resp);
+		//super.doGet(req, resp);
+		System.out.println("entered doGEt");
 	}
 
 }

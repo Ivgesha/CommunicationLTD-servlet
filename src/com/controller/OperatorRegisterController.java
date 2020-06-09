@@ -4,7 +4,9 @@ import java.io.IOException;
 import java.security.InvalidKeyException;
 import java.security.NoSuchAlgorithmException;
 import java.security.SignatureException;
+import java.util.List;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -12,8 +14,10 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import com.model.PasswordHandler;
+import com.dao.CustomerDAO;
 import com.dao.LoginDAOImpl;
 import com.dao.LoginDao;
+import com.entity.Customer;
 import com.entity.Login;
 
 public class OperatorRegisterController extends HttpServlet {
@@ -28,7 +32,9 @@ public class OperatorRegisterController extends HttpServlet {
 	boolean upperCasePresent = false;
 	boolean lowerCasePresent = false;
 	boolean specialCharacterPresent = false;
-
+	CustomerDAO customerDAO = null;
+	RequestDispatcher dispatcher = null;
+	
 	private static final long serialVersionUID = 1L;
 	LoginDao loginDao = null;
 	PasswordHandler passwordHandler = null;
@@ -87,6 +93,13 @@ public class OperatorRegisterController extends HttpServlet {
 						upperCasePresent = false;
 						lowerCasePresent = false;
 						specialCharacterPresent = false;
+						// if we managed to insert correctly, well be back to index.jsp // 
+						// ----------------------------------- // 
+						//dispatcher = req.getRequestDispatcher("/views/Customer-list.jsp");
+						//dispatcher.forward(req, resp); 
+						resp.sendRedirect("index.jsp");
+						return;
+						// ----------------------------------- //
 					} catch (InvalidKeyException | SignatureException | NoSuchAlgorithmException e) {
 						// TODO Auto-generated catch block
 						e.printStackTrace();
@@ -96,7 +109,8 @@ public class OperatorRegisterController extends HttpServlet {
 							"password missing one of the folowing: specialChar,upperChar,lowerChar, digitChar\n");
 					// need to add redirects
 					//resp.sendRedirect("/OperatorRegisterController");
-
+					resp.sendRedirect("views/operator-register.jsp");
+					return;
 				}
 
 			} else {
@@ -104,6 +118,8 @@ public class OperatorRegisterController extends HttpServlet {
 				System.out.println("password to short");
 				// need to add redirects
 				//resp.sendRedirect("/OperatorRegisterController");
+				resp.sendRedirect("views/operator-register.jsp");
+				return;
 
 			}
 
@@ -113,7 +129,9 @@ public class OperatorRegisterController extends HttpServlet {
 			System.out.println("password and validationPassword dosent match");
 			// need to add redirects
 			//resp.sendRedirect("/OperatorRegisterController");
-		}
+			resp.sendRedirect("views/operator-register.jsp");
+			return;
+			}
 		// need to create salt,
 		// need to combind salt + password
 		// then need to use func toHexString to generate hmac.

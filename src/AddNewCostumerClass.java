@@ -14,7 +14,7 @@ public class AddNewCostumerClass extends HttpServlet {
 		System.out.println("entered AddNewCostumerClass c'tor ");
 		
 	}
-	//
+	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		

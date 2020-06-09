@@ -29,8 +29,7 @@
 	</security-constraint>
 	
 	
-	
-	
+ 
 	
 	
 	<servlet>
@@ -55,6 +54,7 @@
 		<url-pattern>/LoginController</url-pattern>
 	</servlet-mapping>
 
+
 	<servlet>
 		<description></description>
 		<display-name>OperatorRegisterController</display-name>
@@ -65,6 +65,18 @@
 		<servlet-name>OperatorRegisterController</servlet-name>
 		<url-pattern>/OperatorRegisterController</url-pattern>
 	</servlet-mapping>
+
+	<servlet>
+		<description></description>
+		<display-name>ForgotPasswordController</display-name>
+		<servlet-name>ForgotPasswordController</servlet-name>
+		<servlet-class>com.controller.ForgotPasswordController</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>ForgotPasswordController</servlet-name>
+		<url-pattern>/ForgotPasswordController</url-pattern>
+	</servlet-mapping>
+
 
 	<servlet>
 		<servlet-name>Welcome</servlet-name>
@@ -132,6 +144,9 @@
 		<servlet-name>SystemC</servlet-name>
 		<url-pattern>/SystemC</url-pattern>
 	</servlet-mapping>
+
+
+
 
 
 

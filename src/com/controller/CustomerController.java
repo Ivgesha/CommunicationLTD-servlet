@@ -25,8 +25,9 @@ public class CustomerController extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 
-		
+		System.out.println("entered doGet");
 		String action = request.getParameter("action");
+		System.out.println("action = " + action);
 		if (action == null)
 			action = "LIST";
 
@@ -44,6 +45,7 @@ public class CustomerController extends HttpServlet {
 	// pressing submit in the addCustomer page 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
+		System.out.println("entered doPost");
 		String email = request.getParameter("email");
 		String customerName = request.getParameter("customerName");
 		String internetPackage = request.getParameter("internetPackage");

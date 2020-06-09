@@ -26,14 +26,16 @@
 				</div>
 
 				<div class="form-group">
-					<input type="text" name="password" class="form-control"
+					<input type="password" name="password" class="form-control"
 						placeholder="Enter password" />
 				</div>
 			</div>
 
-			<div class="card-footer">
+			<div class="card-body">
 			<input type="submit" value="Login" class="btn btn-primary" />
+			<input type="submit" value="Forgot password" class="btn btn-outline-secondary" />
 			</div>
+
 		</form>
 
 	</div>
